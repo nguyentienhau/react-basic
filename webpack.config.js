@@ -1,8 +1,9 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = function (env, argsObject) {
 	return {
-		entry: "./src/index.js",
+		entry: "./src/index.jsx",
 		output: {
 			path: path.join(__dirname, argsObject.mode || "build"),
 			filename: "index.js",
@@ -37,6 +38,10 @@ module.exports = function (env, argsObject) {
 				},
 			],
 		},
-		plugins: [],
+		plugins: [
+			new HtmlWebpackPlugin({
+				template: "public/index.html",
+			}),
+		],
 	};
 };

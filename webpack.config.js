@@ -11,9 +11,9 @@ module.exports = function (env, argsObject) {
 		target: ["web"],
 		devServer: {
 			static: {
-				directory: path.join(__dirname, "public"),
+				directory: "public",
 			},
-			port: "5000",
+			port: 5000,
 			open: true,
 			historyApiFallback: true,
 		},
